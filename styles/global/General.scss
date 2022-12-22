@@ -1,0 +1,26 @@
+body {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Fira Sans', Arial, sans-serif;
+    -webkit-text-size-adjust: none;
+}
+
+p {
+    color: #5e6d75;
+}
+
+a {
+    color: #5e6d75;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #353d41;
+}
+
+.container {
+    max-width: 1300px;
+    padding: 30px;
+    margin: 0 auto;
+}

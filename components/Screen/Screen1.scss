@@ -1,0 +1,24 @@
+.screen1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    height: 100vh;
+    background: url('../../assets/images/bg_profile.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+    h1 {
+        color: $colorBg;
+        font-size: 60px;
+        font-family: 'FiraSans',Arial,sans-serif;
+        font-weight: 500;
+        span {
+            color: #182f39;
+        }
+    }
+    &__text {
+        line-height: 1.5;
+        width: 40%;
+    }
+}
