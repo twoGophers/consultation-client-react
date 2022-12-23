@@ -8,6 +8,14 @@
 @import '../../components/ui/button/Button.scss';
 @import '../../components/navigation/Navigation.scss';
 @import '../../components/ui/margin/Margin.scss';
+@import '../../components/ui/blockBg/BlockBg.scss';
+
+//Scroll
+@import '../../components/scroll/SmoothScroll.scss';
 
 //Screen
-@import '../../components/Screen/Screen1.scss';
+@import '../../components/Screen/ScreenImport.scss';
+
+//
+@import '../../components/modal/Modal.scss';
+@import '../../components/modal/Login.module.scss';

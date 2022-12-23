@@ -1,4 +1,6 @@
 body {
+    position: relative;
+    overflow-x: hidden;
     height: 100%;
     width: 100%;
     box-sizing: border-box;
@@ -23,4 +25,15 @@ a:hover {
     max-width: 1300px;
     padding: 30px;
     margin: 0 auto;
+}
+
+//Change style default
+.css-1ps6pg7-MuiPaper-root {
+    box-shadow: none !important;
+}
+
+.css-189e9pj-MuiButtonBase-root-MuiButton-root {
+    background-color: $colorBg;
+    font-family: 'Fira Sans', Arial, sans-serif;
+    font-size: 16px;
 }
