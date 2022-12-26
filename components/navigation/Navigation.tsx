@@ -1,16 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
+import Link from 'next/link';
+import { useSelector, useDispatch } from 'react-redux';
 
 export default function Navigation() {
+  const [ positionNavigation, setPositionNavigation ] = useState(false);
+  const navigation = useSelector((state: any) => state.navigation.nav);
+
+  useEffect(() => {
+    console.log(navigation);
+    setPositionNavigation(navigation);
+  }, [navigation]);
   return (
     <>
-        <nav>
+        <nav 
+          style={ positionNavigation ? { position: 'fixed', background: '#fff' } : {  position: "absolute" }}
+          className={ positionNavigation ? 'nav-down' : 'nav-up' }
+        >
             <div className="nav container">
                 <div className="nav__link">
-                    <a href="/">Услуги</a>
-                    <a href="/">Стоимость</a>
-                    <a href="/">Обо мне</a>
-                    <a href="/">Контакты</a>
+                    <Link href="/">Услуги</Link>
+                    <Link href="/">Стоимость</Link>
+                    <Link href="/">Обо мне</Link>
+                    <Link href="/">Контакты</Link>
                 </div> 
                 <a href='tel: 89776115779' className="nav__contact">
                   <PhoneIphoneIcon style={{color : '#5e6d75'}} />: 8 977 611 57 79

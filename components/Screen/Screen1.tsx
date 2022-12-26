@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Margin from '../ui/margin/Margin';
 import Button from '../ui/button/Button';
 import Modal from '../modal/Modal';
+import Image from 'next/image';
 
 interface ScreenProps {
     title: string,
@@ -20,12 +21,14 @@ export default function Screen1( { title, titleOne, titleTwo, content, image }: 
         <div className="screen1__title">
             <h1>{ title } <br /><span>{ titleOne } <br /> { titleTwo }</span></h1>
             <Margin />
-            <p className='screen1__text'>{ content }</p>
+            <p className='screen1__text content'>{ content }</p>
             <Margin />
             <Button />
         </div>
         <div className="screen1__img">
-            <div className="screen1__img-image" style={{ backgroundImage: `url(${image.src})` }} ></div>
+            <div className="screen1__img-image" >
+                <Image className='screen1__img-img' fill src={image.src} alt="screen1__img-img" />
+            </div>
         </div>
     </div>
   )

@@ -1,0 +1,33 @@
+.services__block {
+    width: 49%;
+    border-radius: 40px;
+    background-color: #f1f1f1;
+    background-position: center center;
+    border-color: transparent;
+    border-style: solid;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 40px;
+    &:nth-child(4) {
+        img {
+            max-width: 170px;
+        }
+    }
+    img {
+        max-width: 200px;
+    }
+}
+
+.services__block-content {
+    h3 {
+        color: #182f39;
+        font-size: 32px;
+        font-family: 'FiraSans',Arial,sans-serif;
+        line-height: 1.2;
+        font-weight: 600;
+        background-position: center center;
+        border-color: transparent;
+        border-style: solid;
+    }
+}

@@ -21,11 +21,38 @@ a:hover {
     color: #353d41;
 }
 
+.content {
+    color: #5e6d75;
+    font-size: 18px;
+    font-family: 'FiraSans',Arial,sans-serif;
+    line-height: 1.55;
+    font-weight: 400;
+    background-position: center center;
+    border-color: transparent;
+    border-style: solid;
+}
+
 .container {
     max-width: 1300px;
     padding: 30px;
     margin: 0 auto;
 }
+.main {
+    width: 100%;
+    background: #fff;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    border: 1px solid black;
+    transform: translateY(-50px);
+    padding-top: 70px;
+}
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
 
 //Change style default
 .css-1ps6pg7-MuiPaper-root {

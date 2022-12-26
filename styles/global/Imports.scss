@@ -4,11 +4,14 @@
 @import './General.scss';
 @import './Animation.scss';
 
-//
+//ui
 @import '../../components/ui/button/Button.scss';
-@import '../../components/navigation/Navigation.scss';
 @import '../../components/ui/margin/Margin.scss';
 @import '../../components/ui/blockBg/BlockBg.scss';
+@import '../../components/ui//titleBlock/TitleBlock.scss';
+
+@import '../../components/navigation/Navigation.scss';
+@import '../../components/services/Services.scss';
 
 //Scroll
 @import '../../components/scroll/SmoothScroll.scss';
