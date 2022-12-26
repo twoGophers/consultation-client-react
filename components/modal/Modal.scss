@@ -38,6 +38,19 @@
     &__typography {
         margin-bottom: 20px;
     }
+    .modal-status {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        &__text {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-size: 22px;
+            text-align: center;
+        }
+    }
 
 }    
 .active {
