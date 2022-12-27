@@ -25,6 +25,23 @@
     &__paper {
         position: relative;
     }
+    form {
+        overflow-y: scroll;
+        max-height: 65vh;
+        position: relative;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        &::-webkit-scrollbar {
+            width: 0px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: rgb(184, 184, 185);    /* цвет плашки */
+            border-radius: 20px; 
+        }
+        button {
+            margin-top: 10px;
+        }  
+    }
     &__close {
         position: absolute;
         top: 0;

@@ -7,6 +7,11 @@ import TextField from '@mui/material/TextField';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import CloseIcon from '@mui/icons-material/Close';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
 import  { fetchApplication }  from '../../store/slice/ApplicationSlice';
 import ModalSuccess from './ModalSuccess';
 import ModalError from './ModalError';
@@ -16,6 +21,7 @@ export default function Modal() {
     const modal = useSelector((state) => state.modal.show);
     const [ showModalStatus, setShowModalStatus ] = useState(modal);
     const [ reqStatus, setReqStatus ] = useState(true);
+    const [ statusCheckbox, setsStatusCheckbox ] = useState();
     const [ switchModal, setSwitchModal ] = useState(false);
     const [ timeStatusModal, setTimeStatusModal ] = useState(1000);
     const { register, handleSubmit, reset, formState: { errors, isValid }} = useForm({
@@ -24,15 +30,17 @@ export default function Modal() {
           surName: '',
           email: '',
           phone: '',
-          password: ''
+          password: '',
         },
         mode: 'onChange',
       });
 
         
-    const onSubmit = async (values) => {        
+    const onSubmit = async (values) => {   
+        values.checkbox = statusCheckbox;     
         const data = await dispatch(fetchApplication(values));
         console.log(data.meta.requestStatus);
+        console.log(values);
         setReqStatus(false);
         setSwitchModal(<ModalSuccess/>);
 
@@ -43,7 +51,8 @@ export default function Modal() {
                 surName: '',
                 email: '',
                 phone: '',
-                password: ''
+                password: '',
+                checkbox: ''
             })
         } ,timeStatusModal);
 
@@ -67,7 +76,7 @@ export default function Modal() {
                 { reqStatus  
                     ? <Paper className='modal__paper'>
                         <Typography  className='modal__typography' variant="h5">
-                            Создание аккаунта
+                            Отправить заявку
                         </Typography>
                         <CloseIcon className='modal__close' onClick={() => dispatch(showModal(false))} />
                         <form onSubmit={handleSubmit(onSubmit)}>
@@ -106,8 +115,20 @@ export default function Modal() {
                             label="Телефон"
                             fullWidth
                             />
+                            <FormLabel id="demo-radio-buttons-group-label">Выберите вид услуги</FormLabel>
+                            <RadioGroup
+                                aria-labelledby="demo-radio-buttons-group-label"
+                                defaultValue="female"
+                                name="radio-buttons-group"
+                            >
+                                <FormControlLabel onClick={(e) => setsStatusCheckbox(e.target.value)} value="consultation" control={<Radio />} label="Консультация" />
+                                <FormControlLabel onClick={(e) => setsStatusCheckbox(e.target.value)} value="visa" control={<Radio />} label="Туристическая виза" />
+                                <FormControlLabel onClick={(e) => setsStatusCheckbox(e.target.value)} value="DC160" control={<Radio />} label="Проверка DC 160" />
+                                <FormControlLabel onClick={(e) => setsStatusCheckbox(e.target.value)} value="greencard" control={<Radio />} label="Грин карта" />
+                                <FormControlLabel onClick={(e) => setsStatusCheckbox(e.target.value)} value="personal" control={<Radio />} label="Cоздание личного кабинета" />
+                            </RadioGroup>
                             <Button disabled={!isValid} type="submit" size="large" variant="contained" fullWidth>
-                            Отправить заявку
+                                Отправить заявку
                             </Button>
                         </form>
                         </Paper>

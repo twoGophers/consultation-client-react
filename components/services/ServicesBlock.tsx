@@ -4,10 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { showNavigation } from '../../store/slice/NavigationSlice';
 
-//Api
-import { services } from '../../api/services/services.json';
-
-export default function ServicesBlock() {
+export default function ServicesBlock({ children }: any ) {
     const blockRef = useRef(null);
     const dispatch = useDispatch();
   
@@ -30,9 +27,7 @@ export default function ServicesBlock() {
     }, []);
   return (
     <div ref={blockRef} className="services">
-        { services.map( item => (
-            <Services key={item.id} name={item.name} content={item.content} link={item.link} image={item.image} />
-        ))}
+        { children }
     </div>
   )
 }

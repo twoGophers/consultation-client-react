@@ -14,10 +14,11 @@ interface ScreenProps {
 
 export default function Screen1( { title, titleOne, titleTwo, content, image }: ScreenProps ) {
 
-    const [show, setShow] = useState(false);
+    const [ statusBlock, setStatusBlock ] = useState(false);
 
   return (
     <div className='container screen1'>
+        <Modal />
         <div className="screen1__title">
             <h1>{ title } <br /><span>{ titleOne } <br /> { titleTwo }</span></h1>
             <Margin />
