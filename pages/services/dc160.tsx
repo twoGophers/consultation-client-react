@@ -7,9 +7,9 @@ import TitleBlock from '../../components/ui/titleBlock/Titleblock';
 import Margin from '../../components/ui/margin/Margin';
 import ServicesBlock from '../../components/services/ServicesBlock';
 import QuestionBlock from '../../components/questionBlock/QuestionBlock';
-import Cabinet from '../../public/services/cabinet.png';
+import DC160 from '../../public/services/dc160.png';
 
-export default function help() {
+export default function dc160() {
   const questionBlock = [
     'Какой тип визы вам подходит?',
     'Какие документы необходимы для оформления визы?',
@@ -24,18 +24,18 @@ export default function help() {
   return (
     <>
       <Head>
-        <title>Консультация</title>
-        <meta name="description" content="Консультация для получения туристической визы" />
+        <title>Проверка DC 160</title>
+        <meta name="description" content="Консультация заполнения анкеты DC 160" />
       </Head>
       <Screen1 
-        title={'Создание личного'}
-        titleOne={'кабинета'}
+        title={'Проверка DC 160'}
+        titleOne={''}
         titleTwo={''}
-        content={'Помощь в создании личного кабинета, оформление, рекомендации'}
+        content={'Проверка DC 160 на наличие ошибок, рекомендации заполнения.'}
         image={Consultation}
       />
         <Main >
-            <TitleBlock title={'Создания личного кабинета'} />
+            <TitleBlock title={'DC 160'} />
             <Margin />
             <ServicesBlock>
             <QuestionBlock 
@@ -44,9 +44,9 @@ export default function help() {
                 cost={'40$'}
                 titleQuestion={'Мы обсудим вопросы:'}
                 question={ questionBlock }
-                result={'эти и любые другие вопросы по оформлению визы в США'}
-                image={ Cabinet }
-                alt={'Cabinet'}
+                result={'эти и любые другие вопросы по оформлению анкеты DC 160'}
+                image={ DC160 }
+                alt={'DC160'}
               />
             </ServicesBlock>
         </Main>

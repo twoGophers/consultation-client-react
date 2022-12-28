@@ -1,0 +1,28 @@
+{
+    "rewiews": [
+        {
+            "id": 1,
+            "image": "one.jpeg"
+        },
+        {
+            "id": 2,
+            "image": "two.jpg"
+        },
+        {
+            "id": 3,
+            "image": "one.jpeg"
+        },        
+        {
+            "id": 4,
+            "image": "two.jpg"
+        },
+        {
+            "id": 5,
+            "image": "one.jpeg"
+        },
+        {
+            "id": 6,
+            "image": "two.jpg"
+        }
+    ]
+}

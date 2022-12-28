@@ -10,6 +10,9 @@
 @import '../../components/ui/blockBg/BlockBg.scss';
 @import '../../components/ui//titleBlock/TitleBlock.scss';
 
+//mui
+@import '../../components/ui/mui/Mui.scss';
+
 @import '../../components/navigation/Navigation.scss';
 @import '../../components/services/Services.scss';
 
@@ -23,3 +26,15 @@
 //
 @import '../../components/modal/Modal.scss';
 @import '../../components/modal/Login.module.scss';
+
+//Advantages
+@import '../../components/advantages/Advantages.scss';
+
+//Reviews
+@import '../../components/reviews/Reviews.scss';
+
+//Swiper
+@import '../../components/reviews/Swiper.scss';
+
+//CurrentQuestion
+@import '../../components/currentQuestions/CurrentQuestion.scss';

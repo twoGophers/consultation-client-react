@@ -19,10 +19,7 @@ export default function Navigation() {
         >
             <div className="nav container">
                 <div className="nav__link">
-                    <Link href="/">Услуги</Link>
-                    <Link href="/">Стоимость</Link>
-                    <Link href="/">Обо мне</Link>
-                    <Link href="/">Контакты</Link>
+                    <Link href="/">Главная</Link>
                 </div> 
                 <a href='tel: 89776115779' className="nav__contact">
                   <PhoneIphoneIcon style={{color : '#5e6d75'}} />: 8 977 611 57 79

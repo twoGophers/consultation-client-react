@@ -25,8 +25,8 @@ export default function creatingpersonal() {
   return (
     <>
       <Head>
-        <title>Консультация</title>
-        <meta name="description" content="Консультация для получения туристической визы" />
+        <title>Создание личного кабинета</title>
+        <meta name="description" content="Создание личного кабинета" />
       </Head>
       <Screen1 
         title={'Создание личного'}
@@ -45,7 +45,7 @@ export default function creatingpersonal() {
                 cost={'40$'}
                 titleQuestion={'Мы обсудим вопросы:'}
                 question={ questionBlock }
-                result={'эти и любые другие вопросы по оформлению визы в США'}
+                result={'эти и любые другие вопросы по оформлению личного кабинета'}
                 image={ Cabinet }
                 alt={'Cabinet'}
               />
