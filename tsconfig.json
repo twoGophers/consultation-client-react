@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/scroll/SmoothScroll.jsx", "components/layout/Layout.jsx", "components/layout/Layout.jsx", "store/store.tsx", "components/modal/Modal.jsx", "store/slice/ApplicationSlice.jsx", "store/slice/ApplicationSlice.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/scroll/SmoothScroll.jsx", "components/layout/Layout.jsx", "components/layout/Layout.jsx", "store/store.tsx", "components/modal/Modal.jsx", "store/slice/ApplicationSlice.jsx", "store/slice/ApplicationSlice.jsx", "components/navigation/Navigation.jsx"],
   "exclude": ["node_modules"]
 }

@@ -5,7 +5,6 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 import AnchorLink from 'react-anchor-link-smooth-scroll' ;
-import { render } from 'sass';
 
 export function HomeNavigation() {
   return (
@@ -31,8 +30,8 @@ export function OtherNavigation() {
 export default function Navigation() {
   const router = useRouter();
   const [ positionNavigation, setPositionNavigation ] = useState(false);
-  const navigation = useSelector((state: any) => state.navigation.nav);
-  const [ urlNavigation, setUrlNavigation ] = useState< any | null>(null);
+  const navigation = useSelector((state) => state.navigation.nav);
+  const [ urlNavigation, setUrlNavigation ] = useState(null);
 
   useEffect(() => {
     if(router.pathname === '/') {
