@@ -1,0 +1,22 @@
+@media screen and (max-width: 1300px) {
+    .screen1 h1 {
+        font-size: 52px;
+    }
+    .titleblock  {
+        font-size: 42px;
+    }
+    .services__block-content h3 {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .screen1__img {
+        min-width: 400px;
+        display: flex;
+        align-items: flex-end;
+    }
+    .screen1__img-image {
+        height: 80%;
+    }
+}
