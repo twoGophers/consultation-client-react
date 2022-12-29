@@ -53,7 +53,7 @@ export default function Home() {
               <Margin />
               <hr />
               <CurrentQuestion question_block={question_block.question_block} title={'Актуальные вопросы'} />
-            </Main>
+            </Main>  
       {/* </SmoothScroll> */}
     </div>
   )
