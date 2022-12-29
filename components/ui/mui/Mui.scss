@@ -23,3 +23,16 @@
 .title-accordion {
     font-size: 22px;
 }
+
+.accordion-block {
+    margin-top: 15px;
+    border-radius: 30px;
+    &::before {
+        height: 0px;
+    }
+}
+
+.css-1elwnq4-MuiPaper-root-MuiAccordion-root:last-of-type {
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}

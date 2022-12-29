@@ -8,6 +8,10 @@ import Margin from '../../components/ui/margin/Margin';
 import ServicesBlock from '../../components/services/ServicesBlock';
 import QuestionBlock from '../../components/questionBlock/QuestionBlock';
 import Visa from '../../public/services/registrationVisa.png';
+import CurrentQuestion from '../../components/currentQuestions/CurrentQuestion';
+
+//Api
+import question_block  from '../../api/question-block/question_block.json';
 
 export default function tourist() {
   const questionBlock = [
@@ -49,8 +53,10 @@ export default function tourist() {
                 alt={'Visa'}
               />
             </ServicesBlock>
+            <Margin />
+            <hr />
+            <CurrentQuestion question_block={question_block.question_block} title={'Актуальные вопросы'} />
         </Main>
-        <div style={{ height: '100vh' }}></div>
     </>
   )
 }

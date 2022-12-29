@@ -9,7 +9,7 @@ interface Advant {
 
 export default function Advantages({ advantag, title }: Advant ) {
     return (
-    <div className="advantages">
+    <div id='advantages' className="advantages">
         <TitleBlock title={title} />
         <Margin />
         <div className="advantages__content">

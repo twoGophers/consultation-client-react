@@ -1,14 +1,49 @@
 import React, { useState, useEffect } from 'react';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
-import Link from 'next/link';
 import { useSelector, useDispatch } from 'react-redux';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+
+import AnchorLink from 'react-anchor-link-smooth-scroll' ;
+import { render } from 'sass';
+
+export function HomeNavigation() {
+  return (
+    <>
+      <AnchorLink href="#services" offset='150'>Услуги</AnchorLink>
+      <AnchorLink href="#advantages" offset='150'>Преимущества</AnchorLink>
+      <AnchorLink href="#rewiews" offset='150'>Отзывы</AnchorLink>
+      <AnchorLink href="#currentQuestion" offset='150'>Актуальные вопросы</AnchorLink>
+    </>
+  )
+}
+
+export function OtherNavigation() {
+  return (
+    <>
+      <Link href="/">Главная</Link>
+      <AnchorLink href="#consultation" offset='150'>Консультация</AnchorLink>
+      <AnchorLink href="#currentQuestion" offset='150'>Актуальные вопросы</AnchorLink>
+    </>
+  )
+}
 
 export default function Navigation() {
+  const router = useRouter();
   const [ positionNavigation, setPositionNavigation ] = useState(false);
   const navigation = useSelector((state: any) => state.navigation.nav);
+  const [ urlNavigation, setUrlNavigation ] = useState< any | null>(null);
 
   useEffect(() => {
-    console.log(navigation);
+    if(router.pathname === '/') {
+      setUrlNavigation(<HomeNavigation />);
+    } else {
+      setUrlNavigation(<OtherNavigation />);
+    }
+
+  }, [router.pathname])
+
+  useEffect(() => {
     setPositionNavigation(navigation);
   }, [navigation]);
   return (
@@ -19,7 +54,7 @@ export default function Navigation() {
         >
             <div className="nav container">
                 <div className="nav__link">
-                    <Link href="/">Главная</Link>
+                    {urlNavigation}
                 </div> 
                 <a href='tel: 89776115779' className="nav__contact">
                   <PhoneIphoneIcon style={{color : '#5e6d75'}} />: 8 977 611 57 79

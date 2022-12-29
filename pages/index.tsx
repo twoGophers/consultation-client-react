@@ -10,10 +10,10 @@ import ServicesBlock from '../components/services/ServicesBlock';
 import Services from '../components/services/Services';
 
 //Api
-import { services } from '../api/services/services.json';
-import { advantages } from '../api/advantages/advantages.json';
-import { rewiews } from '../api/rewiews/rewiews.json';
-import { question_block } from '../api/question-block/question_block.json';
+import  services  from '../api/services/services.json';
+import  advantages  from '../api/advantages/advantages.json';
+import  rewiews  from '../api/rewiews/rewiews.json';
+import  question_block  from '../api/question-block/question_block.json';
 
 import Advantages from '../components/advantages/Advantages';
 import Reviews from '../components/reviews/Reviews';
@@ -39,22 +39,21 @@ export default function Home() {
               <TitleBlock title={'Услуги'} />
               <Margin />
               <ServicesBlock>
-                { services.map( item => (
+                { services.services.map( item => (
                     <Services key={item.id} name={item.name} content={item.content} link={item.link} image={item.image} />
                 ))}
               </ServicesBlock>
               <Margin />
               <hr />
               <Margin />
-              <Advantages advantag={advantages} title={'Преимущества'} />
+              <Advantages advantag={advantages.advantages} title={'Преимущества'} />
               <Margin />
               <hr />
-              <Reviews rewiews={rewiews} title={'Отзывы'} />
+              <Reviews rewiews={rewiews.rewiews} title={'Отзывы'} />
               <Margin />
               <hr />
-              <CurrentQuestion question_block={question_block} title={'Актуальные вопросы'} />
+              <CurrentQuestion question_block={question_block.question_block} title={'Актуальные вопросы'} />
             </Main>
-          <div style={{ height: '100vh' }}></div>
       {/* </SmoothScroll> */}
     </div>
   )

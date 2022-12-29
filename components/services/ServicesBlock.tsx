@@ -26,7 +26,7 @@ export default function ServicesBlock({ children }: any ) {
       }
     }, []);
   return (
-    <div ref={blockRef} className="services">
+    <div ref={blockRef} id="services" className="services">
         { children }
     </div>
   )

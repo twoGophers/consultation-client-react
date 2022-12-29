@@ -8,6 +8,10 @@ import Margin from '../../components/ui/margin/Margin';
 import ServicesBlock from '../../components/services/ServicesBlock';
 import QuestionBlock from '../../components/questionBlock/QuestionBlock';
 import GreenCard from '../../public/services/Green-card.png';
+import CurrentQuestion from '../../components/currentQuestions/CurrentQuestion';
+
+//Api
+import { question_block } from '../../api/question-block/question_block.json';
 
 export default function helpgreencard() {
   const questionBlock = [
@@ -49,8 +53,10 @@ export default function helpgreencard() {
                 alt={'грин карта'}
               />
             </ServicesBlock>
+            <Margin />
+            <hr />
+            <CurrentQuestion question_block={question_block} title={'Актуальные вопросы'} />
         </Main>
-        <div style={{ height: '100vh' }}></div>
     </>
   )
 }

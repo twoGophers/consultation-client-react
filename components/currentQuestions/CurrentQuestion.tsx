@@ -28,12 +28,12 @@ export default function CurrentQuestion( { title, question_block } : CurrentQues
       };
   
     return (
-      <div>
+      <div id='currentQuestion'>
         <Margin/>
         <TitleBlock title={title} />
         <Margin/>
         { question_block.map(( {id, panel, title, question } :QuestionBlock ) => (
-            <Accordion key={id} expanded={expanded === panel } onChange={handleChange(panel)}>
+            <Accordion className='accordion-block' key={id} expanded={expanded === panel } onChange={handleChange(panel)}>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1bh-content"

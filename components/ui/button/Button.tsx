@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image'
-import Vector from '../../../assets/images/svg/Arrow 1.svg';
+import Vector from '../../../assets/images/svg/Arrow1.svg';
 import { useDispatch } from 'react-redux';
 import { showModal } from '../../../store/slice/ModalSlice';
 

@@ -26,7 +26,7 @@ export default function QuestionBlock({
     alt
     }: Question ) {
   return (
-    <div className="question-block">
+    <div id='consultation' className="question-block">
         <div className="question-block__container">
             <h3>{title}</h3>
             <p>Длительность: <span>{ time }</span></p>

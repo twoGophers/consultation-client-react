@@ -20,7 +20,7 @@ interface Rewiews {
 
 export default function Reviews({ title, rewiews }: Rewiews) {
   return (
-    <div className='reviews'>
+    <div className='reviews' id='rewiews'>
         <Margin />
         <TitleBlock title={title} />
         <Margin />
