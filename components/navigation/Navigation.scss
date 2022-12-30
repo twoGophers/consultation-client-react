@@ -9,7 +9,7 @@ nav {
         justify-content: space-between;
         align-items: center;
         a {
-            font-size: 18px;
+            font-size: 20px;
         }
         &__link {
             a {
@@ -19,6 +19,38 @@ nav {
         &__contact {
             display: flex;
             align-items: center;
+        }
+        &__mobile-menu {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        &__mobile-menu-link {
+            position: absolute;
+            width: max-content;
+            top: 40px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 5px;
+            padding: 15px;
+            background: #fff;
+            box-shadow: 0px 0px 8px 3px rgba(34, 60, 80, 0.2);
+            a {
+                width: 100%;
+                margin-bottom: 15px;
+                transition: 0.3s;
+            }
+        }
+        .show-menu {
+            cursor: pointer;
+            animation: 1s show-menu ease-in-out;
+        }
+        .outside-block {
+            width: 100vw;
+            height: 100vh;
+            margin-left: -30px;
+            padding-left: 30px;
+            position: absolute;
         }
     }
 }
@@ -42,4 +74,9 @@ nav {
 @keyframes nav-down {
     0% { transform: translateY(-80px);}
     100% { transform: translateY(0px); }
+}
+
+@keyframes show-menu {
+    0%{ opacity: 0; }
+    100%{ opacity: 1; }
 }

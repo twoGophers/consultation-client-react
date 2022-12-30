@@ -11,7 +11,7 @@ import Person from '../../public/services/consultation.png';
 import CurrentQuestion from '../../components/currentQuestions/CurrentQuestion';
 
 //Api
-import { question_block } from '../../api/question-block/question_block.json';
+import question_block  from '../../api/question-block/question_block.json';
 
 export default function consultation() {
 
@@ -56,7 +56,7 @@ export default function consultation() {
             </ServicesBlock>
             <Margin />
             <hr />
-            <CurrentQuestion question_block={question_block} title={'Актуальные вопросы'} />
+            <CurrentQuestion question_block={question_block.question_block} title={'Актуальные вопросы'} />
         </Main>
     </>
   )

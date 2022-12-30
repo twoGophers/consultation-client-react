@@ -35,6 +35,8 @@
     "yup": "^0.32.11"
   },
   "compilerOptions": {
-    "types": ["react-anchor-link-smooth-scroll"]
+    "types": [
+      "react-anchor-link-smooth-scroll"
+    ]
   }
 }
