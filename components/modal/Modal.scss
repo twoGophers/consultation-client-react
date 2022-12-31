@@ -44,9 +44,13 @@
         .form-conditionality {
             margin-top: 10px;
             input[type='checkbox'] {
+                display: block;
+                position: relative;
                 margin-right: 10px;
                 margin-left: 3px;
                 transform: scale(1.4);
+                width: 30px;
+                height: 30px;
             }
             .field {
                 margin-bottom: 10px !important;
