@@ -335,3 +335,20 @@ textarea {
 a {
     text-decoration: none;
 }
+
+input,button,textarea,select{
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    -webkit-border-radius:0px
+}
+input[type="checkbox"]{
+    -webkit-appearance:checkbox;
+    -moz-appearance:checkbox;
+    appearance:checkbox
+}
+input[type="radio"]{
+    -webkit-appearance:radio;
+    -moz-appearance:radio;
+    appearance:radio-button
+}
