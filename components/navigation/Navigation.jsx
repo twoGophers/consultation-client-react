@@ -30,6 +30,14 @@ export function OtherNavigation() {
   )
 }
 
+export function ConditionalityNavigation() {
+  return (
+    <>
+      <Link href="/">Главная</Link>
+    </>
+  )
+}
+
 export default function Navigation() {
   const router = useRouter();
   const [ positionNavigation, setPositionNavigation ] = useState(false);
@@ -45,8 +53,10 @@ export default function Navigation() {
   };
 
   useEffect(() => {
-    if(router.pathname === '/') {
+    if (router.pathname === '/') {
       setUrlNavigation(<HomeNavigation />);
+    } else if (router.pathname === '/conditionality/conditionality') {
+      setUrlNavigation(<ConditionalityNavigation />);
     } else {
       setUrlNavigation(<OtherNavigation />);
     }

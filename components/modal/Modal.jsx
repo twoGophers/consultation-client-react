@@ -15,6 +15,7 @@ import FormLabel from '@mui/material/FormLabel';
 import  { fetchApplication }  from '../../store/slice/ApplicationSlice';
 import ModalSuccess from './ModalSuccess';
 import ModalError from './ModalError';
+import Link from 'next/link';
 
 export default function Modal() {
     const dispatch = useDispatch();
@@ -24,6 +25,7 @@ export default function Modal() {
     const [ statusCheckbox, setsStatusCheckbox ] = useState();
     const [ switchModal, setSwitchModal ] = useState(false);
     const [ timeStatusModal, setTimeStatusModal ] = useState(1000);
+    const [ checked, setchecked ] = useState(true);
     const { register, handleSubmit, reset, formState: { errors, isValid }} = useForm({
         defaultValues: {
           fullName: '',
@@ -31,6 +33,7 @@ export default function Modal() {
           email: '',
           phone: '',
           password: '',
+          checkbox: false
         },
         mode: 'onChange',
       });
@@ -65,6 +68,10 @@ export default function Modal() {
             setTimeStatusModal(2000);
         }
     };
+
+    const statusCheckboxBoolean = () => {
+        setchecked(!checked);
+    }
 
     useEffect(() => {
         setShowModalStatus(modal);
@@ -127,6 +134,16 @@ export default function Modal() {
                                 <FormControlLabel onClick={(e) => setsStatusCheckbox(e.target.value)} value="greencard" control={<Radio />} label="Грин карта" />
                                 <FormControlLabel onClick={(e) => setsStatusCheckbox(e.target.value)} value="personal" control={<Radio />} label="Cоздание личного кабинета" />
                             </RadioGroup>
+                            <div className='form-conditionality'>
+                                <TextField
+                                error={Boolean(errors.checkbox?.message)}
+                                type="checkbox"
+                                {...register('checkbox', { required: 'Укажите согласие' })}
+                                className="field"
+                                />
+                                    согласны с политикой <Link href={'/conditionality/conditionality'}> кондефициальности</Link>
+                            </div>
+                            
                             <Button disabled={!isValid} type="submit" size="large" variant="contained" fullWidth>
                                 Отправить заявку
                             </Button>
