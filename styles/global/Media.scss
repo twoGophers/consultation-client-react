@@ -173,6 +173,9 @@
         height: 70%;
         min-width: 130px;
     }
+    .modal__content {
+        min-width: 100%;
+    }
 }
 
 @media screen and (max-width: 400px) {
