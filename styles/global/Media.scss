@@ -130,29 +130,21 @@
     .screen1__text {
         width: 80%;
     }
-    .screen1__title {
-        display: flex;
-        flex-direction: column;
-        height: 50%;
-    }
     .screen1 h1, .titleblock {
         font-size: 28px;
     }
-    .screen1 {
-        flex-direction: column-reverse;
-    }
     .screen1__img {
-        display: flex;
-        position: relative;
-        height: 40%;
-        width: 100%;
-        justify-content: center;
+        display: none;
     }
     .screen1__img-image {
         width: 30%;
     }
     .screen1__title {
-        height: 70%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        align-content: space-around;
+        justify-content: space-around;
     }
     .services__block {
         width: 100%;

@@ -135,13 +135,16 @@ export default function Modal() {
                                 <FormControlLabel onClick={(e) => setsStatusCheckbox(e.target.value)} value="personal" control={<Radio />} label="Cоздание личного кабинета" />
                             </RadioGroup>
                             <div className='form-conditionality'>
-                                <TextField
+                                {/* <TextField
                                 error={Boolean(errors.checkbox?.message)}
                                 type="checkbox"
                                 {...register('checkbox', { required: 'Укажите согласие' })}
                                 className="field"
-                                />
+                                /> */}
+                                <label>
+                                    <input type="checkbox"  />
                                     согласны с политикой <Link href={'/conditionality/conditionality'}> кондефициальности</Link>
+                                </label>
                             </div>
                             
                             <Button disabled={!isValid} type="submit" size="large" variant="contained" fullWidth>

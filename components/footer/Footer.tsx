@@ -10,7 +10,7 @@ export default function Footer() {
        <div className="footer container">
             <p>Наши контакты</p>
             <div className="footer__link">
-                <a href='tel: 89776115779' target='_blank' rel="noopener noreferrer" >
+                <a href='tel: 89776115779' >
                     <MailOutlineIcon sx={{ fontSize: 32 }} />
                 </a>
                 <a href="mailto:koptelovavictory@yandex.ru">
