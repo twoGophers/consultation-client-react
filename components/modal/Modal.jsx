@@ -12,7 +12,8 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
-import  { fetchApplication }  from '../../store/slice/ApplicationSlice';
+import { fetchApplication }  from '../../store/slice/ApplicationSlice';
+import { fetchChatBot } from '../../store/slice/TelegramSlice';
 import ModalSuccess from './ModalSuccess';
 import ModalError from './ModalError';
 import Link from 'next/link';
@@ -25,7 +26,6 @@ export default function Modal() {
     const [ statusCheckbox, setsStatusCheckbox ] = useState();
     const [ switchModal, setSwitchModal ] = useState(false);
     const [ timeStatusModal, setTimeStatusModal ] = useState(1000);
-    const [ checked, setchecked ] = useState(true);
     const { register, handleSubmit, reset, formState: { errors, isValid }} = useForm({
         defaultValues: {
           fullName: '',
@@ -37,13 +37,24 @@ export default function Modal() {
         },
         mode: 'onChange',
       });
-
         
     const onSubmit = async (values) => {   
-        values.checkbox = statusCheckbox;     
+
+        values.checkbox = statusCheckbox;
         const data = await dispatch(fetchApplication(values));
-        console.log(data.meta.requestStatus);
-        console.log(values);
+
+        //Определение статуса отправки формы
+        // console.log(data.meta.requestStatus);
+
+        const userQuestionnaire = 
+        `Имя: ${values.fullName}, Фамилия: ${values.surName}, Емайл: ${values.email}, Телефон: ${values.phone}, Услуги: ${values.checkbox}`
+
+        if(data.meta.requestStatus === 'fulfilled') {
+            await dispatch(fetchChatBot(userQuestionnaire));
+        } else {
+            console.log('The bot died');
+        }
+
         setReqStatus(false);
         setSwitchModal(<ModalSuccess/>);
 
@@ -68,10 +79,6 @@ export default function Modal() {
             setTimeStatusModal(2000);
         }
     };
-
-    const statusCheckboxBoolean = () => {
-        setchecked(!checked);
-    }
 
     useEffect(() => {
         setShowModalStatus(modal);
@@ -143,7 +150,6 @@ export default function Modal() {
                                 />
                                     согласны с политикой <Link href={'/conditionality/conditionality'}> кондефициальности</Link>
                             </div>
-                            
                             <Button disabled={!isValid} type="submit" size="large" variant="contained" fullWidth>
                                 Отправить заявку
                             </Button>

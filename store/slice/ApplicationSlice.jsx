@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from '../../axios';
 
 export const fetchApplication = createAsyncThunk('auth/fetchApplication', async (params) => {
-  const { data } = await axios.post('/auth/application', params)
+  const { data } = await axios.post('/auth/application', params);
   return data;
 });
 
