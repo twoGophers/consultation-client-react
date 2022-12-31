@@ -26,6 +26,7 @@ export default function Modal() {
     const [ statusCheckbox, setsStatusCheckbox ] = useState();
     const [ switchModal, setSwitchModal ] = useState(false);
     const [ timeStatusModal, setTimeStatusModal ] = useState(1000);
+    const [ date, setDate] = useState(new Date());
     const { register, handleSubmit, reset, formState: { errors, isValid }} = useForm({
         defaultValues: {
           fullName: '',
@@ -46,8 +47,8 @@ export default function Modal() {
         //Определение статуса отправки формы
         // console.log(data.meta.requestStatus);
 
-        const userQuestionnaire = 
-        `Имя: ${values.fullName}, Фамилия: ${values.surName}, Емайл: ${values.email}, Телефон: ${values.phone}, Услуги: ${values.checkbox}`
+        //Отправка на бота инфо
+        const userQuestionnaire = `Имя: ${values.fullName},         Фамилия: ${values.surName},          Емайл: ${values.email},          Телефон: ${values.phone},          Услуги: ${values.checkbox},          Время: ${date.toLocaleTimeString()},          Дата: ${date.toLocaleDateString()}`
 
         if(data.meta.requestStatus === 'fulfilled') {
             await dispatch(fetchChatBot(userQuestionnaire));
@@ -83,6 +84,13 @@ export default function Modal() {
     useEffect(() => {
         setShowModalStatus(modal);
     }, [modal]);
+
+    useEffect(() => {
+        let timer = setInterval(()=>setDate(new Date()), 1000 )
+        return function cleanup() {
+            clearInterval(timer)
+        }
+    });
 
     return (
         <div className={ showModalStatus ? 'modal active' : 'modal'} >

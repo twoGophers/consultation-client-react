@@ -1,8 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const token = process.env.TOKEN_BOT_API;
-const bot_id = process.env.TELEGRAM_BOT_ID;
+const token = process.env.NEXT_PUBLIC_TOKEN_BOT_API;
+const bot_id = process.env.NEXT_PUBLIC_TELEGRAM_BOT_ID;
 
 export const fetchChatBot = createAsyncThunk('auth/fetchChatBot', async (params) => {
   console.log(token);
