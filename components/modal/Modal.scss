@@ -1,6 +1,6 @@
 .modal {
     height: 100vh;
-    // width: 100vw;
+    width: 100vw;
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.4);
     position: fixed;
@@ -42,7 +42,13 @@
             margin-top: 10px;
         }
         .form-conditionality {
-            margin-top: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            align-items: center;
+            font-size: 16px;
+            font-family: "FiraSans", Arial, sans-serif;
             input[type='checkbox'] {
                 display: block;
                 position: relative;
@@ -53,19 +59,14 @@
                 height: 15px;
             }
             .field {
-                margin-bottom: 10px !important;
+                margin-bottom: 20px !important;
+                margin-top: 20px !important;
             }
             fieldset {
                 border: none;
             }
-            label {
-                font-size: 18px;
-                font-family: "FiraSans", Arial, sans-serif;
-                color: #5e6d75;
-                margin-bottom: 20px;
-                line-height: 30px;
-            }
             a {
+                margin-left: 10px;
                 text-decoration: underline;
             }
         }  
