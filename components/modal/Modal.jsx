@@ -45,7 +45,7 @@ export default function Modal() {
         const data = await dispatch(fetchApplication(values));
 
         //Определение статуса отправки формы
-        // console.log(data.meta.requestStatus);
+        console.log(data.meta.requestStatus);
 
         //Отправка на бота инфо
         const userQuestionnaire = `Имя: ${values.fullName},         Фамилия: ${values.surName},          Емайл: ${values.email},          Телефон: ${values.phone},          Услуги: ${values.checkbox},          Время: ${date.toLocaleTimeString()},          Дата: ${date.toLocaleDateString()}`
