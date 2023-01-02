@@ -8,7 +8,7 @@ export const fetchChatBot = createAsyncThunk('auth/fetchChatBot', async (params)
   console.log(token);
   console.log(bot_id);
   console.log(`https://api.telegram.org/bot5912961863:AAG-LXjlL5ldZqjFWzghgpRjJ9uUoVU00cI/sendMessage?chat_id=998384982&parse_mode=html&text=${params}`);
-  const { bot } = await axios.post(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${bot_id}&parse_mode=html&text=${params}`,"r");
+  const { bot } = await axios.post(`https://api.telegram.org/bot5912961863:AAG-LXjlL5ldZqjFWzghgpRjJ9uUoVU00cI/sendMessage?chat_id=998384982&parse_mode=html&text=${params}`,"r");
   return bot;
 });
 
