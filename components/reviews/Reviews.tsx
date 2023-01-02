@@ -60,7 +60,7 @@ export default function Reviews({ title, rewiews }: Rewiews) {
                 className="mySwiper"
                 >
                 {
-                rewiews.reverse().map((item: any) => (
+                rewiews.map((item: any) => (
                         <SwiperSlide key={item.id}>
                             <div className="rewiews__slide">
                                 <img src={`/rewiews/${item.image}`} alt={item.image} />

@@ -52,8 +52,6 @@ export default function Navigation() {
     setToogle(!toogle);
   };
 
-  console.log(router);
-
   useEffect(() => {
     if (router.pathname === '/') {
       setUrlNavigation(<HomeNavigation />);
