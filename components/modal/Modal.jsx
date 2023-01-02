@@ -99,7 +99,7 @@ export default function Modal() {
     return (
         <div className={ showModalStatus ? 'modal active' : 'modal'} >
             <div className="modal__content" onClick={e => e.stopPropagation()}>
-                {/* { reqStatus  
+                { reqStatus  
                     ? <Paper className='modal__paper'>
                         <Typography  className='modal__typography' variant="h5">
                             Отправить заявку
@@ -168,8 +168,7 @@ export default function Modal() {
                         </form>
                         </Paper>
                     :  switchModal
-                } */}
-                <ModalSuccess/>
+                }
             </div>
         </div>
     )
