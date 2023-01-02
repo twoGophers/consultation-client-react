@@ -76,8 +76,12 @@ export default function Modal() {
         }, timeStatusModal);
 
         if (!data.payload) {
-            setSwitchModal(<ModalError/>);
-            setTimeStatusModal(2000);
+            try {
+                setSwitchModal(<ModalError/>);
+                setTimeStatusModal(2000);
+            } catch (error) {
+                console.log(error);
+            }
         }
     };
 
@@ -86,9 +90,9 @@ export default function Modal() {
     }, [modal]);
 
     useEffect(() => {
-        let timer = setInterval(()=>setDate(new Date()), 1000 )
+        let timer = setInterval(()=>setDate(new Date()), 1000 );
         return function cleanup() {
-            clearInterval(timer)
+            clearInterval(timer);
         }
     });
 
