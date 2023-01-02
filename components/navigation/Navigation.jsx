@@ -52,10 +52,12 @@ export default function Navigation() {
     setToogle(!toogle);
   };
 
+  console.log(router);
+
   useEffect(() => {
     if (router.pathname === '/') {
       setUrlNavigation(<HomeNavigation />);
-    } else if (router.pathname === '/conditionality/conditionality') {
+    } else if (router.pathname === '/conditionality/conditionality' || router.pathname === '/404' ) {
       setUrlNavigation(<ConditionalityNavigation />);
     } else {
       setUrlNavigation(<OtherNavigation />);
