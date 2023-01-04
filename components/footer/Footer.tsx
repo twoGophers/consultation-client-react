@@ -3,6 +3,7 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import Link from 'next/link';
+import Admin from '../admin/Admin';
 
 export default function Footer() {
   return (
@@ -25,6 +26,7 @@ export default function Footer() {
                 <Link href={'/conditionality/conditionality'}> кондефициальности</Link>
             </span>
        </div>
+       <Admin />
     </footer>
   )
 }

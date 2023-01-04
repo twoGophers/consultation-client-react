@@ -2,7 +2,6 @@ import Head from 'next/head';
 import Screen1 from '../components/Screen/Screen1';
 import SmoothScroll from '../components/scroll/SmoothScroll';
 import background from '../assets/images/profile.png';
-import Navigation from '../components/navigation/Navigation';
 import Main from '../components/ui/blockBg/Main';
 import TitleBlock from '../components/ui/titleBlock/Titleblock';
 import Margin from '../components/ui/margin/Margin';
