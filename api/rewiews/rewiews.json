@@ -11,18 +11,6 @@
         {
             "id": 3,
             "image": "one.jpg"
-        },        
-        {
-            "id": 4,
-            "image": "two.jpg"
-        },
-        {
-            "id": 5,
-            "image": "one.jpg"
-        },
-        {
-            "id": 6,
-            "image": "two.jpg"
         }
     ]
 }
