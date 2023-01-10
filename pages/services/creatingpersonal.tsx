@@ -13,7 +13,7 @@ import CurrentQuestion from '../../components/currentQuestions/CurrentQuestion';
 //Api
 import axios from '../../axios';
 
-export default function creatingpersonal() {
+export default function Creatingpersonal() {
 
   const [ fetchQuest, setFetchQuest ] = useState<any>();
   const fetchQuestion = async () => {

@@ -13,7 +13,7 @@ import CurrentQuestion from '../../components/currentQuestions/CurrentQuestion';
 //Api
 import axios from '../../axios';
 
-export default function helpgreencard() {
+export default function Helpgreencard() {
 
   const [ fetchQuest, setFetchQuest ] = useState<any>();
   const fetchQuestion = async () => {

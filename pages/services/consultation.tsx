@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import React, { useEffect, useState } from 'react';
 import Screen1 from '../../components/Screen/Screen1';
-import Consultation from '../../assets/images/profile.png';
+import ConsultationImg from '../../assets/images/profile.png';
 import Main from '../../components/ui/blockBg/Main';
 import TitleBlock from '../../components/ui/titleBlock/Titleblock';
 import Margin from '../../components/ui/margin/Margin';
@@ -12,8 +12,9 @@ import CurrentQuestion from '../../components/currentQuestions/CurrentQuestion';
 
 import axios from '../../axios';
 
-export default function consultation() {
+export default function Consultation() {
   const [ fetchQuest, setFetchQuest ] = useState<any>();
+
   const fetchQuestion = async () => {
     try {
         const question = await axios.get('/questions/home');
@@ -51,7 +52,7 @@ useEffect(() => {
         titleOne={'Викторией'}
         titleTwo={''}
         content={'Консультация с Викторией по получению в США'}
-        image={Consultation}
+        image={ConsultationImg}
       />
         <Main >
             <TitleBlock title={'Вопросы по получению визы в США'} />

@@ -13,7 +13,7 @@ import CurrentQuestion from '../../components/currentQuestions/CurrentQuestion';
 //Api
 import axios from '../../axios';
 
-export default function tourist() {
+export default function Tourist() {
 
   const [ fetchQuest, setFetchQuest ] = useState<any>();
   const fetchQuestion = async () => {
