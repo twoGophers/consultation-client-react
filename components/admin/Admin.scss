@@ -94,7 +94,7 @@
     margin-top: 30px;
     padding-bottom: 500px;
     &__db-item {
-        margin-bottom: 20px;
+        margin-bottom: 50px;
         border: 1px solid rgb(170, 169, 169);
         padding: 10px;
         border-radius: 5px;
@@ -109,19 +109,38 @@
     }
     &__db-icon {
         position: absolute;
-        top: 0;
+        top: -20px;
         right: 0;
+        background: #fff;
     }
     .admin-icon {
         border: 1px solid rgb(212, 212, 212);
-        margin: 5px;
         border-radius: 5px;
+        margin-right: 10px;
         cursor: pointer;
     }
     &__form {
         margin-top: 50px;
         display: flex;
         flex-direction: column;
+        h3 {
+            margin-bottom: 30px;
+        }
+        input {
+            border: none;
+        }
+        .css-md26zr-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+            border-color: #c5c5c5;
+        }
+        textarea {
+            border: 1px solid #c5c5c5;
+        }
+    }
+    .change-form {
+        input {
+            margin-bottom: 20px;
+            width: 100%;
+        }
     }
 }
 

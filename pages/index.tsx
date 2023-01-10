@@ -12,7 +12,6 @@ import Services from '../components/services/Services';
 import  services  from '../api/services/services.json';
 import  advantages  from '../api/advantages/advantages.json';
 import  rewiews  from '../api/rewiews/rewiews.json';
-import  question_block  from '../api/question-block/question_block.json';
 
 import Advantages from '../components/advantages/Advantages';
 import Reviews from '../components/reviews/Reviews';
@@ -51,7 +50,7 @@ export default function Home() {
               <Reviews rewiews={rewiews.rewiews} title={'Отзывы'} />
               <Margin />
               <hr />
-              <CurrentQuestion question_block={question_block.question_block} title={'Актуальные вопросы'} />
+              <CurrentQuestion title={'Актуальные вопросы'} />
             </Main>  
       {/* </SmoothScroll> */}
     </div>

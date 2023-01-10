@@ -1,4 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from '../../axios';
 
 interface TypeValue {
   show: boolean,
@@ -24,7 +25,7 @@ export const modalSlice = createSlice({
     },
     showAdminPanel: (state, action) => {
       state.adminPanel = action.payload;
-    },
+    }
   },
 });
 

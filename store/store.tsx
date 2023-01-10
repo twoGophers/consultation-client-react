@@ -3,7 +3,7 @@ import modalSlice from './slice/ModalSlice';
 import applicationSlice from './slice/ApplicationSlice';
 import navigationSlice from './slice/NavigationSlice';
 import telegramBotSlice from './slice/TelegramSlice';
-import questionsHomeSlice from './slice/QuestionSlice';
+
  
 export const store = configureStore({
   reducer: {
@@ -11,7 +11,6 @@ export const store = configureStore({
     application: applicationSlice,
     navigation: navigationSlice,
     bot: telegramBotSlice,
-    questions: questionsHomeSlice
   },
 });
 

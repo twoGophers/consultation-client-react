@@ -1,0 +1,22 @@
+.succes-form {
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 30;
+    &__modal {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        background: #fff;
+        border-radius: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

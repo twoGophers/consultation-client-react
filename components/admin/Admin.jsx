@@ -1,27 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
-import { useAppSelector, useAppDispatch } from '../../store/hooks';
+import { useDispatch, useSelector } from 'react-redux';
 import { showAdmin, showAdminPanel } from '../../store/slice/ModalSlice';
 
 import AdminChange from './AdminChange';
 
 export default function Admin() {
     //Redux
-    const dispatch = useAppDispatch();
-    const modal = useAppSelector((state) => state.modal.admin);
-    const modalPanel = useAppSelector((state) => state.modal.adminPanel);
+    const dispatch = useDispatch();
+    const modal = useSelector((state) => state.modal.admin);
+    const modalPanel = useSelector((state) => state.modal.adminPanel);
 
     //Variables
-    const [ name, setName ] = useState<string>(String);
-    const [ nameValid, setNameValid ] = useState<boolean>(false);
-    const [ password, setPassword ] = useState<string>(String);
-    const [ passwordValid, setPasswordValid ] = useState<boolean>(false);
-    const [ showModalAdmin, setShowModalAdmin ] = useState<boolean>(modal);
-    const [ showModalAdminPanel, setShowModalAdminPanel ] = useState<boolean>(modalPanel);
-    const [ isValid, setIsValid ] = useState<boolean>(true);
+    const [ name, setName ] = useState(String);
+    const [ nameValid, setNameValid ] = useState(false);
+    const [ password, setPassword ] = useState(String);
+    const [ passwordValid, setPasswordValid ] = useState(false);
+    const [ showModalAdmin, setShowModalAdmin ] = useState(modal);
+    const [ showModalAdminPanel, setShowModalAdminPanel ] = useState(modalPanel);
+    const [ isValid, setIsValid ] = useState(true);
 
     //Validation form
-    const handleAdminModal = (name: any, password: any) => {
+    const handleAdminModal = (name, password) => {
         if( name === process.env.NEXT_PUBLIC_ADMIN_NAME && password === process.env.NEXT_PUBLIC_ADMIN_PASSWORD ) {
             dispatch(showAdminPanel(true));
             dispatch(showAdmin(false));

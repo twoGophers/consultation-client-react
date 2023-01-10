@@ -59,6 +59,7 @@ export default function Modal() {
         setReqStatus(false);
         setSwitchModal(<ModalSuccess/>);
 
+        //Reset form
         setTimeout(() => {
             dispatch(showModal(false));
             reset({
