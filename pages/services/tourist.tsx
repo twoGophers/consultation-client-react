@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Screen1 from '../../components/Screen/Screen1';
 import Consultation from '../../assets/images/profile.png';
 import Main from '../../components/ui/blockBg/Main';
@@ -11,9 +11,26 @@ import Visa from '../../public/services/registrationVisa.png';
 import CurrentQuestion from '../../components/currentQuestions/CurrentQuestion';
 
 //Api
-import question_block  from '../../api/question-block/question_block.json';
+import axios from '../../axios';
 
 export default function tourist() {
+
+  const [ fetchQuest, setFetchQuest ] = useState<any>();
+  const fetchQuestion = async () => {
+    try {
+        const question = await axios.get('/questions/home');
+        if(question.status === 200) {
+            setFetchQuest(question.data);
+        } 
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+useEffect(() => {
+    fetchQuestion();
+}, []);
+
   const questionBlock = [
     'Какой тип визы вам подходит?',
     'Какие документы необходимы для оформления визы?',
@@ -55,7 +72,7 @@ export default function tourist() {
             </ServicesBlock>
             <Margin />
             <hr />
-            <CurrentQuestion question_block={question_block.question_block} title={'Актуальные вопросы'} />
+            <CurrentQuestion question_block={fetchQuest} title={'Актуальные вопросы'} />
         </Main>
     </>
   )

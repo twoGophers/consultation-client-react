@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Screen1 from '../components/Screen/Screen1';
 import SmoothScroll from '../components/scroll/SmoothScroll';
@@ -12,12 +13,32 @@ import Services from '../components/services/Services';
 import  services  from '../api/services/services.json';
 import  advantages  from '../api/advantages/advantages.json';
 import  rewiews  from '../api/rewiews/rewiews.json';
+import axios from '../axios';
 
 import Advantages from '../components/advantages/Advantages';
 import Reviews from '../components/reviews/Reviews';
 import CurrentQuestion from '../components/currentQuestions/CurrentQuestion';
 
 export default function Home() {
+
+  const [ fetchQuest, setFetchQuest ] = useState<any>();
+  const fetchQuestion = async () => {
+    try {
+
+        const question = await axios.get('/questions/home');
+        if(question.status === 200) {
+            setFetchQuest(question.data);
+        } 
+        
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+useEffect(() => {
+    fetchQuestion();
+}, []);
+
   return (
     <div>
       <Head>
@@ -50,7 +71,7 @@ export default function Home() {
               <Reviews rewiews={rewiews.rewiews} title={'Отзывы'} />
               <Margin />
               <hr />
-              <CurrentQuestion title={'Актуальные вопросы'} />
+              <CurrentQuestion question_block={fetchQuest} title={'Актуальные вопросы'} />
             </Main>  
       {/* </SmoothScroll> */}
     </div>
