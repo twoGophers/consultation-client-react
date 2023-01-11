@@ -28,28 +28,31 @@ export default function CurrentQuestion( { title, question_block } : CurrentQues
   
     return (
       <div id='currentQuestion'>
-        <Margin/>
-        <TitleBlock title={title} />
-        <Margin/>
-        { question_block?.map(( {_id, panel, title, question } :QuestionBlock ) => (
-            <Accordion className='accordion-block' key={_id} expanded={expanded === _id } onChange={handleChange(_id)}>
-                <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1bh-content"
-                    id="panel1bh-header"
-                >
-                    <Typography className='title-accordion'>
-                        { title }
-                    </Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                    <Typography className='content'>
-                        { question }
-                    </Typography>
-                </AccordionDetails>
-            </Accordion>
-        ))}
-        
+        { question_block &&
+            <>
+                <Margin/>
+                <TitleBlock title={title} />
+                <Margin/>
+                { question_block?.map(( {_id, panel, title, question } :QuestionBlock ) => (
+                    <Accordion className='accordion-block' key={_id} expanded={expanded === _id } onChange={handleChange(_id)}>
+                        <AccordionSummary
+                            expandIcon={<ExpandMoreIcon />}
+                            aria-controls="panel1bh-content"
+                            id="panel1bh-header"
+                        >
+                            <Typography className='title-accordion'>
+                                { title }
+                            </Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <Typography className='content'>
+                                { question }
+                            </Typography>
+                        </AccordionDetails>
+                    </Accordion>
+                ))}
+            </>
+        }
       </div>
     );
 }
