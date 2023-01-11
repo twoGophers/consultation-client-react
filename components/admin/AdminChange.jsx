@@ -163,6 +163,8 @@ export default function AdminChange() {
                             type="submit"
                         >Добавить актуальный вопрос на главной странице</button>
                     </form>
+                    <img src={`http://localhost:5000/images/error.png`} alt="" srcset="" />
+                    <img src={`https://consultation-server-react.vercel.app/images/success.png`} alt="" srcset="" />
                 </div>
             </div>
         </div>
