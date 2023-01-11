@@ -28,7 +28,7 @@ export default function Screen1( { title, titleOne, titleTwo, content, image }: 
         </div>
         <div className="screen1__img">
             <div className="screen1__img-image" >
-                <Image className='screen1__img-img' fill sizes='' src={image.src} alt="screen1__img-img" priority />
+                {/* <Image className='screen1__img-img' fill sizes='' src={image.src} alt="screen1__img-img" priority /> */}
             </div>
         </div>
     </div>
