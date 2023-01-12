@@ -42,8 +42,8 @@ useEffect(() => {
   return (
     <div>
       <Head>
-        <title>Консультация</title>
-        <meta name="description" content="Консультация для получения туристической визы" />
+        <title>Консультация по получению туристических виз США</title>
+        <meta name="description" content="Консультация по получению туристической визы США в разных регионах и странах. Заполнение анкет, советы для успешного прохождения собеседования." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* <SmoothScroll> */}

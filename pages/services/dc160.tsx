@@ -45,8 +45,8 @@ useEffect(() => {
   return (
     <>
       <Head>
-        <title>Проверка DC 160</title>
-        <meta name="description" content="Консультация заполнения анкеты DC 160" />
+        <title>Консультирование по заполнению анкет DC 160</title>
+        <meta name="description" content="Консультирование по заполнению анкет DC 160. Проверка на наличие корректности и ошибок." />
       </Head>
       <Screen1 
         title={'Проверка DC 160'}

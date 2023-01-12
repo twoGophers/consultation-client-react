@@ -44,8 +44,8 @@ useEffect(() => {
   return (
     <>
       <Head>
-        <title>Консультация</title>
-        <meta name="description" content="Консультация для получения туристической визы" />
+        <title>Консультация для получения туристической визы</title>
+        <meta name="description" content="Индивидуальная консультация для получения туристической визы. " />
       </Head>
       <Screen1 
         title={'Консультация с'}
